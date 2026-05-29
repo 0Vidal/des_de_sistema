@@ -25,3 +25,29 @@ class  Conta:
         else:
             self.sacar(valor)
             destino.depositar(valor)
+
+    #Métodos para retornar apenas 
+    #valores das propriedades
+
+    @property
+    def saldo(self):
+        return self.__saldo
+    
+    @property
+    def titular(self):
+        return self.__titular
+    
+    @property
+    def limite(self):
+        return self.__limite
+    
+    @property
+    def numero(self):
+        return self.__numero
+    
+    #Métodos para manipular os
+    #valores das propriedades
+
+    @limite.setter
+    def limite(self, limite):
+        self.__limite = limite
