@@ -3,41 +3,37 @@
 #Filme: Nome, Ano, Duração, Avaliação
 #série: Nome, Ano, Temporadas, Avaliação
 
-class Filme:
+#Classe mãe/principal
+class Programas:
+    def __init__(self, nome, ano):
+        self._nome = nome.title()
+        self.ano = ano
+        self._curtir = 0
+
+    @property
+    def valor_curtir(self):
+        return self._curtir
+    
+    @property
+    def valor_nome(self):
+        return self._nome
+
+    def curtida(self):
+        self._curtir += 1
+
+class Filme(Programas):
     def __init__(self, nome, ano, duracao):
-        self.__nome = nome.title()
+        self._nome = nome.title()
         self.ano = ano
         self.duracao = duracao
-        self.__curtir = 0
+        self._curtir = 0
 
-    @property
-    def valor_curtir(self):
-        return self.__curtir
-    
-    @property
-    def valor_nome(self):
-        return self.__nome
-
-    def curtida(self):
-        self.curtir += 1
-
-class Series:
+class Series(Programas):
     def __init__(self, nome, ano, temporadas):
-        self.__nome = nome.title()
+        self._nome = nome.title()
         self.ano = ano
         self.temporadas = temporadas
-        self.__curtir = 0
-
-    @property
-    def valor_curtir(self):
-        return self.__curtir
-    
-    @property
-    def valor_nome(self):
-        return self.__nome
-
-    def curtida(self):
-        self.__curtir += 1
+        self._curtir = 0
 
 print("Série:")
 supernatural = Series("Supernatural", 2005, 15)
