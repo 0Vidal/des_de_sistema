@@ -1,5 +1,4 @@
 #Filmes e séries tem as seguintes características: 
-
 #Filme: Nome, Ano, Duração, Avaliação
 #série: Nome, Ano, Temporadas, Avaliação
 
@@ -37,12 +36,13 @@ class Series:
         return self.__nome
 
     def curtida(self):
-        self.curtir += 1
+        self.__curtir += 1
 
 print("Série:")
-supernatural = Series("Supernatual", 2005, 15)
+supernatural = Series("Supernatural", 2005, 15)
 supernatural.curtida()
-print(f"Nome: {supernatural.__nome} - Ano: {supernatural.ano} - Temporada: {supernatural.temporadas} - Curtidas: {supernatural.curtir}")
+
+print(f"Nome: {supernatural.valor_nome} - Ano: {supernatural.ano} - Temporada: {supernatural.temporadas} - Curtidas: {supernatural.curtida()}")
 
 print("Filme:")
 avatar = Filme("Avatar", 2009, 177)
