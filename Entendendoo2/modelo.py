@@ -32,12 +32,17 @@ class Series(Programas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
-print("Série:")
+
 supernatural = Series("Supernatural", 2005, 15)
 supernatural.curtida()
 
-print(f"{supernatural.valor_nome} - {supernatural.ano} - {supernatural.temporadas} - {supernatural.curtida()}")
+#print(f"{supernatural.valor_nome} - {supernatural.ano} - {supernatural.temporadas} - {supernatural.curtida()}")
 
-print("Filme:")
 avatar = Filme("Avatar", 2009, 177)
-print(avatar.ano)
+#print(avatar.ano)
+
+filmes_series = [supernatural, avatar]
+
+for programas in filmes_series:
+    diferenca = programas.duracao if hasattr(programas, 'duracao') else programas.temporadas
+    print(f"{programas._nome} - {programas.ano} - {diferenca}")
