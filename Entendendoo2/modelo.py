@@ -4,6 +4,7 @@
 #série: Nome, Ano, Temporadas, Avaliação
 
 #Classe mãe/principal
+#Super classe
 class Programas:
     def __init__(self, nome, ano):
         self._nome = nome.title()
@@ -22,24 +23,20 @@ class Programas:
         self._curtir += 1
 
 class Filme(Programas):
-    def __init__(self, nome, ano, duracao):
-        self._nome = nome.title()
-        self.ano = ano
+    def __init__(self,nome,ano,duracao):
+        super().__init__(nome, ano)
         self.duracao = duracao
-        self._curtir = 0
 
 class Series(Programas):
-    def __init__(self, nome, ano, temporadas):
-        self._nome = nome.title()
-        self.ano = ano
+    def __init__(self,nome,ano,temporadas):
+        super().__init__(nome, ano)
         self.temporadas = temporadas
-        self._curtir = 0
 
 print("Série:")
 supernatural = Series("Supernatural", 2005, 15)
 supernatural.curtida()
 
-print(f"Nome: {supernatural.valor_nome} - Ano: {supernatural.ano} - Temporada: {supernatural.temporadas} - Curtidas: {supernatural.curtida()}")
+print(f"{supernatural.valor_nome} - {supernatural.ano} - {supernatural.temporadas} - {supernatural.curtida()}")
 
 print("Filme:")
 avatar = Filme("Avatar", 2009, 177)
