@@ -22,27 +22,35 @@ class Programas:
     def curtida(self):
         self._curtir += 1
 
-class Filme(Programas):
-    def __init__(self,nome,ano,duracao):
+    def __str__(self):
+            return f"{self._nome} - {self.ano} - {self._curtir} Curtidas"
+
+class Filmes(Programas):
+    def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
 
+    def __str__(self):
+            return f"{self._nome} - {self.ano} - {self.duracao} - {self._curtir} Curtidas"
+
 class Series(Programas):
-    def __init__(self,nome,ano,temporadas):
+    def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
+    def __str__(self):
+            return f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas"
+
+#Instanciar é salvar em uma variável
 
 supernatural = Series("Supernatural", 2005, 15)
 supernatural.curtida()
-
 #print(f"{supernatural.valor_nome} - {supernatural.ano} - {supernatural.temporadas} - {supernatural.curtida()}")
 
-avatar = Filme("Avatar", 2009, 177)
+avatar = Filmes("Avatar", 2009, 177)
 #print(avatar.ano)
 
 filmes_series = [supernatural, avatar]
 
 for programas in filmes_series:
-    diferenca = programas.duracao if hasattr(programas, 'duracao') else programas.temporadas
-    print(f"{programas._nome} - {programas.ano} - {diferenca}")
+    print(programas)
