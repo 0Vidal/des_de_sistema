@@ -41,16 +41,44 @@ class Series(Programas):
     def __str__(self):
             return f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas"
 
-#Instanciar é salvar em uma variável
+class Playlist:
+    def __init__(self, nomePl, elementos):
+        self.nome = nomePl
+        self.elementos = elementos
 
+    def tamanho_lista(self):
+        return len(self.elementos)
+
+#Séries
 supernatural = Series("Supernatural", 2005, 15)
-supernatural.curtida()
-#print(f"{supernatural.valor_nome} - {supernatural.ano} - {supernatural.temporadas} - {supernatural.curtida()}")
+Dd = Series("Demolidor", 2015, 3)
 
+#Filmes
 avatar = Filmes("Avatar", 2009, 177)
-#print(avatar.ano)
+Stw = Filmes("Star Wars: Eisódio III - A Vingança dos Sith", 2005, 146)
 
-filmes_series = [supernatural, avatar]
+#Curtidas
+supernatural.curtida()
+supernatural.curtida()
+supernatural.curtida()
+supernatural.curtida()
+Dd.curtida()
+Dd.curtida()
+Dd.curtida()
+avatar.curtida()
+avatar.curtida()
+avatar.curtida()
+Stw.curtida()
+Stw.curtida()
+Stw.curtida()
+Stw.curtida()
+Stw.curtida()
 
-for programas in filmes_series:
+filmes_series = [avatar, Stw, supernatural, Dd]
+Pl_Aleatoria = Playlist("Aleatóriamente Aleatória", filmes_series )
+
+for programas in Pl_Aleatoria.elementos:
     print(programas)
+
+#nome, programas, tamanho()
+#nomePl = nome da Playlist
