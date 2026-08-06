@@ -41,13 +41,18 @@ class Series(Programas):
     def __str__(self):
             return f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas"
 
-class Playlist(list):
+class Playlist():
     def __init__(self, nomePl, elementos):
         self.nomePl = nomePl
-        super().__init__(elementos)
+        self._elementos = elementos
 
+    @property
+    def listar(self):
+         return self._elementos
+
+    @property
     def tamanho_lista(self):
-        return len(self.elementos)
+        return len(self._elementos)
 
 #Séries
 supernatural = Series("Supernatural", 2005, 15)
@@ -78,7 +83,7 @@ filmes_series = [avatar, Stw, supernatural, Dd]
 Pl_Aleatoria = Playlist("Aleatóriamente Aleatória", filmes_series )
 
 print(f"Tamanho da Playlist: {len(Pl_Aleatoria)}")
-print(f"Está na Playlist? {avatar in Pl_Aletoria}")
+print(f"Está na Playlist? {avatar in Pl_Aleatoria}")
 
 for programas in Pl_Aleatoria:
     print(programas)
