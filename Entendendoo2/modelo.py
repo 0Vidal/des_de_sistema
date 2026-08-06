@@ -41,10 +41,10 @@ class Series(Programas):
     def __str__(self):
             return f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas"
 
-class Playlist:
+class Playlist(list):
     def __init__(self, nomePl, elementos):
-        self.nome = nomePl
-        self.elementos = elementos
+        self.nomePl = nomePl
+        super().__init__(elementos)
 
     def tamanho_lista(self):
         return len(self.elementos)
@@ -77,7 +77,10 @@ Stw.curtida()
 filmes_series = [avatar, Stw, supernatural, Dd]
 Pl_Aleatoria = Playlist("Aleatóriamente Aleatória", filmes_series )
 
-for programas in Pl_Aleatoria.elementos:
+print(f"Tamanho da Playlist: {len(Pl_Aleatoria)}")
+print(f"Está na Playlist? {avatar in Pl_Aletoria}")
+
+for programas in Pl_Aleatoria:
     print(programas)
 
 #nome, programas, tamanho()
