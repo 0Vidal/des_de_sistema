@@ -49,10 +49,9 @@ class Playlist():
     @property
     def listar(self):
          return self._elementos
-
-    @property
-    def tamanho_lista(self):
-        return len(self._elementos)
+    
+    def __getitem__(self,item):
+         return self._elementos[item]
 
 #Séries
 supernatural = Series("Supernatural", 2005, 15)
@@ -82,11 +81,21 @@ Stw.curtida()
 filmes_series = [avatar, Stw, supernatural, Dd]
 Pl_Aleatoria = Playlist("Aleatóriamente Aleatória", filmes_series )
 
-print(f"Tamanho da Playlist: {len(Pl_Aleatoria)}")
+#print(f"Tamanho da Playlist: {len(Pl_Aleatoria)}")
 print(f"Está na Playlist? {avatar in Pl_Aleatoria}")
+print(Pl_Aleatoria[2])
 
-for programas in Pl_Aleatoria:
-    print(programas)
+#for programas in Pl_Aleatoria:
+#    print(programas)
 
-#nome, programas, tamanho()
-#nomePl = nome da Playlist
+#Python Data Model, Exemplos
+#Inicialização: __init__
+#Representação: __str__,__repr__
+#Container/Sequência: __contains__,__iter__,__len__,__getitem__ 
+#Numéricas: __add__,__sub__,__mul__,__mod__
+
+#Python Data Model, Exemplos
+#Inicialização: obj = Novo()
+#Representação: print(obj),str(obj),repr(obj)
+#Container/Sequência: len(obj),item in obj, for in obj, obj[2:3]
+#Numéricas: obj+outro_obj, obj*obj
